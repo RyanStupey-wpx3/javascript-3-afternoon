@@ -21,7 +21,13 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter((elem) => {
+  if(elem % 2 === 0){
+    return true
+  } else {
+    return false
+  }
+  })
 
 
 
@@ -44,7 +50,10 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map((elem) => {
+  let afterTax = elem * 1.07;
+  return afterTax
+})
 
 
 
@@ -63,7 +72,10 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce((accum, elem) => {
+  return accum + elem;
+
+})
 
 
 
@@ -89,7 +101,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter((elem) => {
+  if (elem['CP'] > 200) {
+    return true
+  }
+})
 
 
 
@@ -106,26 +122,52 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a high order method to get sum of all the order totals
 */
 
-let ordersTotal //Code Here
+let ordersTotal = orders.reduce((accum, elem) => {
+  let priceTax = elem["price"] + elem["tax"] 
+ return accum + priceTax;
+ console.log('priceTax', priceTax)
+}, 0)
 
+console.log(ordersTotal)
 
 
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
-{"owner":"Bob","price":73},{"owner":"Barry","price":57},{"owner":"Barry","price":128},
-{"owner":"Bob","price":119},{"owner":"Barry","price":133},{"owner":"Barry","price":27},
-{"owner":"Barry","price":138},{"owner":"Bob","price":68},{"owner":"Bob","price":50},
-{"owner":"Barry","price":9},{"owner":"Bob","price":123},{"owner":"Bob","price":135},
-{"owner":"Barry","price":30},{"owner":"Barry","price":129},{"owner":"Barry","price":38},
-{"owner":"Bob","price":133},{"owner":"Barry","price":109},{"owner":"Bob","price":115}];
+const purchases = [
+  {"owner":"Barry","price":103},
+  {"owner":"Bob","price":75},
+{"owner":"Bob","price":73},
+{"owner":"Barry","price":57},
+{"owner":"Barry","price":128},
+{"owner":"Bob","price":119},
+{"owner":"Barry","price":133},
+{"owner":"Barry","price":27},
+{"owner":"Barry","price":138},
+{"owner":"Bob","price":68},
+{"owner":"Bob","price":50},
+{"owner":"Barry","price":9},
+{"owner":"Bob","price":123},
+{"owner":"Bob","price":135},
+{"owner":"Barry","price":30},
+{"owner":"Barry","price":129},
+{"owner":"Barry","price":38},
+{"owner":"Bob","price":133},
+{"owner":"Barry","price":109},
+{"owner":"Bob","price":115}];
 // Do not edit the code above.
 
 /*
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
+// console.log(purchases[1].owner)
+
+// let bobsTotal = purchases.reduce(function(accum, elem){
+//   if (purchases[elem].owner === 'Bob') {
+//     return accum + purchases[elem].price;
+//   }
+//   return accum
+// }, 0)
 
 

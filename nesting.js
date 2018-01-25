@@ -52,6 +52,21 @@ var employees = [
 
 //Code Here
 
+let employeeUpdater = () => {
+  for(var i = 0; i < employees.length; i++){
+    switch(employees[i].firstName){
+      case 'Theo':
+      delete employees[i];
+      break;
+      case 'Lorie':
+      employees[i].department = 'HR';
+      break;
+    }
+
+  }
+return employees;
+}
+
 
 
 ////////// PROBLEM 2 //////////
@@ -70,6 +85,13 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+function removeDuplicates(arr){
+  var alpha = arr.filter(function(item, pos, self) {
+    return self.indexOf(item) == pos;
+})
+return alpha;
+}
+// filter returns true or false if the array(self) at indexOf (item) equals the same as position(pos) 
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +119,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -140,6 +162,17 @@ var myCar = {
 
 //Code Here
 
+function recordCleaner(){
+  for(var i = 0; i < myCar.accidents.length; i++){
+  if (myCar.accidents[i].atFaultForAccident === true){
+     myCar.accidents[i].atFaultForAccident = false
+  } 
+  
+}
+console.log(myCar.accidents.length)
+return myCar;
+}
+
 
 
 ////////// PROBLEM 5 //////////
@@ -156,7 +189,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
+console.log(numsArr[1][1])
 
-//Code Here
+function looper(){
+  for(var i = 0; i < numsArr.length; i++){
+    for(var j = 0; j < numsArr[i].length; j++){
+      if(numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      } else {
+          numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  console.log('arr', numsArr)
+  return numsArr
+}
 
 

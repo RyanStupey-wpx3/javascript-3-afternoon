@@ -11,17 +11,17 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
-// for(var key in values) {
-//   console.log(values[key])
-// }
+for(var key in values) {
+  console.log(values[key])
+}
 
 /*
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
@@ -40,7 +40,12 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  var str = '';
+  for (var key in obj) {
+   str += obj[key] + " "
+  
+  }
+    return str
 }
 
 
@@ -54,7 +59,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+var greaterThan10 = (obj) => {
+  for(var key in obj){
+    if(obj[key] > 10) {
+     return obj[key] = 0
+    } else{
+      return obj[key]
+    }
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,9 +79,17 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
-
+function double(obj){
+  var newObj = {};
+ for(var key in obj){
+  newObj += obj[key] * 2
+  
+ }
+   console.log(newObj)
+return newObj
+   
+}
+///*** ask about if this is actually right (console.log obj obj 246810) */
 ////////// PROBLEM 4 //////////
 
 /*
@@ -80,6 +101,7 @@ function showValues( obj ) {
 */
 
 //Code Here
+
 
 
 
